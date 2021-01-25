@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>jai hair salon</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins:wght@300&display=swap" rel="stylesheet">
+	<style>
+		
+		*
+		{
+			margin:0;
+			padding:0;
+				
+		}
+		#banner
+		{
+			background: linear-gradient(rgba(0,0,0,0.5),#009688),url(banner.jpg);
+			background-size: cover;
+			background-position: center;
+		    height:100vh;
+		}
+
+		.logo
+		{
+			width:180px;
+			position:absolute;
+			top:4%;
+			left:4%;
+
+		}
+		.banner-text
+		{
+			text-align: center;
+			color: white;
+			padding-top: 180px;
+			font-family: 'Kaushan Script', cursive;
+				
+
+		}
+		.banner-text h1
+		{
+			font-size: 130px;
+			font-weight: 600;
+		}
+		.banner-text p
+		{
+			line-height: 25px;
+			font-size: 20px;
+			font-weight: 200;
+			font-style: italic;
+
+		}
+		.banner-btn
+		{
+			margin:70px auto 0;
+
+		}
+		.banner-btn a
+		{
+			width:150px;
+			text-decoration: none;
+			display:inline-block;
+			margin:0 10px;
+			padding:12px 0;
+			color: white;
+			border:1px solid white;
+			border-radius: 25px;
+			position:relative;
+			z-index: 1;
+			overflow: hidden;
+			transition: 0.5s;
+		}
+		.banner-btn a span
+		{
+			background: white;
+			height:100%;
+			width:0;
+			border-radius: 25px;
+			position:absolute;
+			top:0;
+			left: 0;
+			z-index: -1;
+			transition: 0.5s;
+
+		}
+		.banner-btn a:hover span
+		{
+			width:100%;
+
+		}
+		.banner-btn a:hover
+		{
+			border:0;
+			color:darkgreen;
+			font-weight: bold;
+			
+		}
+		#sideNav
+		{
+			width:250px;
+			height:100vh;
+			position: fixed;
+			top:0;
+			right:-250px;
+			background: #009688;
+			z-index: 2;
+			transition:0.5s;
+		}
+		nav ul li
+		{
+			list-style: none;
+			margin:50px 20px;
+		}
+		nav ul li a
+		{
+			text-decoration: none;
+			color:white;
+		}
+		#menubtn
+		{
+			width:50px;
+			height:50px;
+			background: #009688;
+			text-align: center;
+			position:fixed;
+			right: 30px;
+			top:20px;
+			border-radius: 4px;
+			z-index: 3;
+			cursor: pointer;
+		}
+		#menubtn img
+		{
+			width:30px;
+			margin-top: 15px;
+		}
+		@media screen and (max-width: 770px)
+		{
+			.banner-text h1
+			{
+				font-size: 44px;
+			}
+			.banner-btn a
+			{
+				display: inline-block;
+			}
+		}
+		/*------feature--------*/
+		#feature
+		{
+			width:100%;
+			padding:70px 0;
+		
+
+
+		}
+		.title-text
+		{
+			text-align: center;
+			padding-bottom: 70px;
+
+		}
+		.title-text p
+		{
+			margin:auto;
+			font-size: 20px;
+			color:#009688;
+			font-weight: bold;
+			position:relative;
+			z-index: 1;
+			display: inline-block;
+			font-family: 'Poppins', sans-serif;	
+		}
+		.title-text p::after
+		{
+			content: '';
+			width:50px;
+			height:35px;
+			background: linear-gradient(#019587,white);
+			position: absolute;
+			top:-20px;
+			left: 0;
+			z-index: -1;
+			transform: rotate(10deg);
+			border-top-left-radius: 35px;
+			border-bottom-right-radius: 35px;
+		}
+		.title-text h1
+		{
+			font-size: 50px;
+			font-family: 'Poppins', sans-serif;	
+		}
+		.feature-box
+		{
+			width: 80%;
+			margin: auto;
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			text-align: center;
+			font-family: 'Poppins', sans-serif;	
+		}
+		.features
+		{
+			flex-basis: 50%;
+
+		}
+		.feature-img
+		{
+			flex-basis: 50%;
+			margin:auto;
+			
+
+		}
+		.feature-img img
+		{
+			width:100%;
+			
+			border-radius: 20px;
+		}
+		.features h1
+		{
+			text-align: left;
+			margin-bottom: 10px;
+			font-weight: 100;
+			color:#009688;
+		}
+		.feature-desc
+		{
+			display: flex;
+			align-items: center;
+			margin-bottom: 40px;
+
+		}
+		.feature-icon .fa
+		{
+			width:50px;
+			height:50px;
+			font-size: 30px;
+			line-height: 50px;
+			border:2px solid #009688;
+			border-radius: 8px;
+			color:#009688;
+			margin:10px;
+		}
+		.feature-text p
+		{
+			padding: 0 20px;
+			text-align: initial;
+		}
+		@media screen and (max-width: 770px)
+		{
+			.title-text h1
+			{
+				font-size: 25px;
+			}
+			.features
+			{
+				flex-basis: 50%;
+			}
+			.feature-img
+			{
+				flex-basis: 50%;
+				
+			}
+			.feature-img img
+			{
+				width:100%;
+				
+			}
+		}
+		/*--services--------*/
+
+		#service
+		{
+			padding:70px 0;
+			width:100%;
+			background: #efefef;
+		}
+		.service-box
+		{
+			width:80%;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-around;
+			margin: auto;
+			padding-top: 10px;
+		}
+		.single-service
+		{
+			flex-basis: 48%;
+			text-align: center;
+			border-radius: 7px;
+			margin-bottom: 20px;
+			color:white;
+			position:relative;
+		}
+		.single-service img
+		{
+			width: 100%;
+			border-radius: 7px;
+
+		}
+		.overlay
+		{
+			width:100%;
+			height:100%;
+			position: absolute;
+			top:0;
+			border-radius: 7px;
+			background: linear-gradient(rgba(0,0,0,0.5) , #009688);
+			opacity: 0;
+			transition:1s;
+
+		}
+		.single-service:hover .overlay
+
+		{
+			opacity:1;
+		}
+		.service-desc
+		{
+			width:80%;
+			position:absolute;
+			bottom:0;
+			opacity:0;
+			left:50%;
+			transform:translateX(-50%);
+			color:white;
+			transition: 1s;
+		}
+		.service-desc h3
+		{
+			margin-bottom: 9px;
+		}
+		hr
+		{
+			background: white;
+			height:2px;
+			border:0;
+			margin:15px auto;
+		}
+		.service-desc small	
+		{
+			font-size: 16px;
+		}
+		.single-service:hover .service-desc
+		{
+			bottom:40%;
+			opacity:1;
+		}
+		@media screen and (max-width: 770px)
+		{
+			.single-service
+			{
+				flex-basis: 100%;
+				margin-bottom: 30px;
+			}
+			.service-desc small	
+			{
+				font-size: 10px;
+			}
+			.service-desc h3
+			{
+				
+				font-size: 16px
+			}
+			.single-service:hover .service-desc
+			{
+					bottom:25%;
+			
+			}
+
+		}
+
+		/*--testimonials--------*/
+
+		#testimonials
+		{
+			padding:70px 0;
+			width:100%;
+		}
+		.testirow
+		{
+			width:80%;
+			display:flex;
+			margin:auto;
+			justify-content: space-between;
+			align-items: flex-start;
+			flex-wrap: wrap;
+		}
+		.col-md-4
+		{
+			flex-basis: 28%;
+			padding:10px;
+			margin-bottom: 30px;
+			border-radius: 5px;
+			box-shadow: 0 10px 20px 3px #00968814;
+			cursor:pointer;
+			transition:  0.3s
+		}
+		.col-md-4 p
+		{
+			font-size: 14px;
+		}
+		.user
+		{
+			display: flex;
+			align-items: center;
+			margin:20px 0;
+
+		}
+		.user img
+		{
+			width:40px;
+			margin-right: 20px;
+			border-radius: 3px;
+		}
+		.info .fa
+		{
+			margin-left: 10px;
+			color:#27c0ff;
+			font-size: 20px;
+		}
+		.info small
+		{
+			color:#27c0ff;
+		}
+		.col-md-4:hover
+		{
+			transform: translateY(-7px);
+		}
+		@media screen and (max-width: 770px)
+		{
+			.col-md-4
+			{
+				flex-basis: 100%;
+			}
+		}
+		/*--footer------------------------*/
+
+		#footer
+		{
+			padding:100px 0 20px;
+			background:#efefef;
+		}
+		.footerrow
+		{
+			width:80%;
+			margin:0 auto;
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+		}
+		.footer-left, .footer-right
+		{
+			flex-basis: 45%;
+			padding: 10px;
+			margin-bottom: 20px;
+		}
+		.footer-right
+		{
+			text-align: right;
+		}
+		.footerrow h1
+		{
+			margin: 10px 0;
+
+		}
+		.footerrow p
+		{
+			line-height: 35px;
+		}
+		.footer-left .fa, .footer-right .fa
+		{
+			font-size: 20px;
+			margin:10px;
+			color: #009688;
+		}
+		.socialicons 
+		{
+			text-align: center;
+			
+		}
+		.socialicons .fa
+		{
+			height:40px;
+			width:40px;
+			font-size: 20px;
+			border:1px solid ;
+			line-height: 40px;
+			font-size: 20px;
+			color:#009688;
+			margin:40px 5px 0;
+			cursor: pointer;
+			transition:0.5s;
+			
+		}
+		.socialicons .fa:hover
+		{
+			background:#009688;
+			color:white;
+			transform: translateY(-5px);
+		}
+		.socialicons p
+		{
+			font-size: 12px;
+			margin-top: 12px;
+		}
+		.socialicons hr
+		{
+			max-width: 60%;
+			height:2px;
+			background:black;
+		}
+	</style>
+</head>
+<body>
+	<section id="banner">
+		<img src="1606404257499 (1).png" alt="" class="logo">
+		<div class="banner-text">
+			<h1>Hair Studio</h1>
+			<p><b>Style</b> your hair and <b>style</b> your life</p>
+			<div class="banner-btn">
+				<a href="#"><span></span>Find Out</a>
+				<a href="#"><span></span>Know More</a>
+			</div>
+		</div>
+	</section>
+	<div id="sideNav">
+		<nav>
+			<ul>
+				<li><a href="">Home</a></li>
+				<li><a href="">Feature</a></li>
+				<li><a href="">Services</a></li>
+				<li><a href="">Testimonials</a></li>
+				<li><a href="">Contact US</a></li>
+
+			</ul>
+		</nav>
+		<div id="menubtn">
+			<img src="menu.png" alt="" id="menu">
+		</div>
+	</div>
+		<!--------------------feature----------------------------->
+
+		<section id="feature">
+			<div class="title-text">
+				<p>FEATURES</p>
+				<h1>Why Choose Us</h1>
+			</div>
+				<div class="feature-box">
+					<div class="features">
+						<h1>Experienced Staff</h1>
+						<div class="feature-desc">
+							<div class="feature-icon">
+								<i class="fa fa-shield" aria-hidden="true"></i>
+
+							</div>
+							<div class="feature-text">
+								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, hamcpqlqmcqcwlnvohlcqpclncqsio	hoddqhdogdoq0gdqqgoqbwgcibcogcobcgo</p>
+							</div>
+						</div>
+						<h1>Pre Booking Online</h1>
+						<div class="feature-desc">
+							<div class="feature-icon">
+								<i class="fa fa-check-square" aria-hidden="true"></i>
+
+							</div>
+							<div class="feature-text">
+								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, modi.</p>
+							</div>
+						</div>
+						<h1>Affordable Costf</h1>
+						<div class="feature-desc">
+							<div class="feature-icon">
+								<i class="fa fa-inr" aria-hidden="true"></i>
+
+							</div>
+							<div class="feature-text">
+								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, hamcpqlqmcqcwlnvohlcqpclncqsio	hoddqhdogdoq0gdqqgoqbwgcibcogcobcgo</p>
+							
+							</div>
+						</div>
+					</div>
+					<div class="feature-img">
+						<img src="img 2.jpg" alt="">
+					</div>
+				</div>
+		
+		</section>
+
+		<!---------------------services------------------>
+
+		<section id="service">
+			
+			<div class="title-text">
+				<p>SERVICES</p>
+				<h1>We Provide Better</h1>
+				<div class="service-box">
+					<div class="single-service">
+						<img src="hair.jpg" alt="">
+						<div class="overlay"></div>
+						<div class="service-desc">
+							<h3>Hair Styling</h3>
+							<hr>
+							<small>Lorem, ipsum dolor, sit amet consectetur adipisicing elit. Similique optio assumenda repellendus corrupti cupiditate voluptatem sint.</small>
+						</div>
+					</div>
+					<div class="single-service">
+						<img src="shampoo.jpg" alt="">
+						<div class="overlay"></div>
+						<div class="service-desc">
+							<h3>Hair Shampoo</h3>
+							<hr>
+							<small>Lorem, ipsum dolor, sit amet consectetur adipisicing elit. Similique optio assumenda repellendus corrupti cupiditate voluptatem sint.</small>
+						</div>
+					</div>
+					<div class="single-service">
+						<img src="trimming.jpg" alt="">
+						<div class="overlay"></div>
+						<div class="service-desc">
+							<h3>Trimming</h3>
+							<hr>
+							<small>Lorem, ipsum dolor, sit amet consectetur adipisicing elit. Similique optio assumenda repellendus corrupti cupiditate voluptatem </small>
+						</div>
+					</div>
+					<div class="single-service">
+						<img src="hair cut.jpg" alt="">
+						<div class="overlay"></div>
+						<div class="service-desc">
+							<h3>Hair Cut</h3>
+							<hr>
+							<small>Lorem, ipsum dolor, sit amet consectetur adipisicing elit. Similique optio assumenda repellendus corrupti cupiditate voluptatem sint.</small>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!----------------------Trstimonials___------------------->
+		<section id="testimonials">
+			<div class="title-text">
+				<p>
+					TESTIMONIALS
+				</p>
+				<h1>What client's say</h1>
+			</div>
+			<div class="testirow">
+				<div class="col-md-4">
+					<div class="user">
+						<img src="people 1.jpg" alt="">
+						<div class="info">
+							<h4> Ben Tennison<i class="fa fa-twitter" aria-hidden="true"></i></h4>
+							<small> @benten</small>
+						</div>
+					</div>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae eius ratione minima, laboriosam quisquam similique repellendus ullam est maxime praesentium hamcpqlqmcqcwlnvohlcqpclncqsio	hoddqhdogdoq0gdqqgoqbwgcibcogcobcgo.</p>
+				</div>
+				<div class="col-md-4">
+					<div class="user">
+						<img src="people 2.jpg" alt="">
+						<div class="info">
+							<h4> nathu lala
+								<i class="fa fa-twitter" aria-hidden="true"></i></h4>
+							<small> @nathulala</small>
+						</div>
+					</div>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae eius ratione minima, laboriosam quisquam similique repellendus ullam est maxime praesentium.</p>
+				
+			</div>
+				<div class="col-md-4">
+					<div class="user">
+						<img src="people 3.jpg" alt="">
+						<div class="info">
+							<h4> lara Tennison<i class="fa fa-twitter" aria-hidden="true"></i></h4>
+							<small> @lalalara</small>
+						</div>
+					</div>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae eius ratione minima, laboriosam quisquam similique repellendus ullam est maxime praesentium hamcpqlqmcqcwlnvohlcqpclncqsio	hoddqhdogdoq0gdqqgoqbwgcibcogcobcgo.</p>
+				</div>
+			</div>
+		</div>
+
+		</section>
+
+		<!---------------------footer----------------------->
+
+		<section id="footer">
+			<div class="title-text">
+				<p>CONTACT</p>
+				<h1>Visit Shop Today</h1>
+				
+			</div>
+			<div class="footerrow">
+				<div class="footer-left">
+					<h1>Opening Hours</h1>
+					<p><i class="fa fa-clock-o" aria-hidden="true"></i>Monday -Friday -> 9am - 9pm</p>
+				<p><i class="fa fa-clock-o" aria-hidden="true"></i>Saturday and Sunday -> 9am - 4pm</p>
+				</div>
+				<div class="footer-right">
+					<h1>Get In Touch</h1>
+					<p>#30 abc colony Tripura ,Jaipur<i class="fa fa-map-marker" aria-hidden="true"></i></p>
+					<p>XYZ@gmail.com<i class="fa fa-envelope" aria-hidden="true"></i></p>
+					<p>+91 9023930393<i class="fa fa-phone" aria-hidden="true"></i></p>
+				</div>
+			</div>
+			<div class="socialicons">
+				<i class="fa fa-facebook-official" aria-hidden="true"></i>
+				<i class="fa fa-instagram" aria-hidden="true"></i>
+				<i class="fa fa-twitter-square" aria-hidden="true"></i>
+				<i class="fa fa-youtube" aria-hidden="true"></i>
+				<hr>
+				<p>Copyrights Jaikishan Sharma</p>
+			</div>
+			
+		</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<script>
+			 var menubtn = document.getElementById("menubtn");
+			 var sideNav = document.getElementById("sideNav");
+			 var menu = document.getElementById("menu");	
+			 sideNav.style.right ="-250px";
+			 menubtn.onclick = function()
+			 {
+			 	if(sideNav.style.right == "-250px")
+			 	{
+			 		sideNav.style.right = "0";
+			 		menu.src = "cross.png";
+
+			 	}
+			 	else
+			 	{
+			 		sideNav.style.right= "-250px";
+			 		menu.src="menu.png";
+			 	}
+			 }	 
+		</script>
+	
+	
+</body>
+</html>
